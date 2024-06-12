@@ -7,4 +7,4 @@
 
 
 # Note
-### ``` gitclone https://github.com/gittest12GH/OPENDISksource.git & cd OPENDISksource & bash bashme```
+### ``` git clone https://github.com/gittest12GH/OPENDISksource.git & cd OPENDISksource & bash bashme```
