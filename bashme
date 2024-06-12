@@ -1,10 +1,17 @@
 bash setup.ks
 ###-------------start------------###
-#enter your Code -Ram 7Gb -Cpu 2core
-
-
-
-
+#
+pip install gdown
+gdown 1W0J8lx6LdxT90dmV6drfbtV99UhIDvSN -O a.7z
+7z X a.7z
+sleep 2
+rm -f a.7z
+#Out W764L.qcow2
+ngrok authtoken $1
+nohup ngrok tcp 5900 --region ap &>/dev/null &
+printf "DIA CHI:"
+curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
+qemu-system-x86_64 -cpu core2duo -smp sockets=1,cores=4,threads=1 -m 5900M -vga vmware -device e1000,netdev=n0 -netdev user,id=n0 -hda W764L.qcow2
 
 
 
